@@ -23,7 +23,7 @@ The Box Salesforce Blueprints project is a collection of examples that can be us
 9. Deploy to either your scratch org or developer org.
 
 ## Disclaimer
-This project is a collection open source examples and should not be treated as an officially supported product. Use at your own risk. If you encounter any problems, please log an [issue](https://github.com/kylefernandadams/box-salesforce-blueprints/issues).
+This project is a collection of open source examples and should not be treated as an officially supported product. Use at your own risk. If you encounter any problems, please log an [issue](https://github.com/kylefernandadams/box-salesforce-blueprints/issues).
 
 ## License
 

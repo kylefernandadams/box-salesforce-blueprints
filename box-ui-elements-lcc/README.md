@@ -14,14 +14,14 @@ Box UI Elements Lightning example that leverages the lightning:container compone
 ```
 python3 parse_box_config.py /path/to/12345_box_congig.json
 ```
-4. Update the [BoxContentUploaderController](/force-app/main/default/classes/BoxContentUploaderController.cls) with the values found in the newly generated sfdc_box_config.json file.
+4. Update the [BoxContentUploaderController](/box-ui-elements-lcc//force-app/main/default/classes/BoxContentUploaderController.cls) with the values found in the newly generated sfdc_box_config.json file.
     > Note: this is necessary since Salesforce will throw an exception if you try to use an encrypted private key.
 
-    * [String publicKeyId = 'PUBLIC_KEY_ID';](/force-app/main/default/classes/BoxContentUploaderController.cls#L9)
-    * [String privateKey = 'DECRYPTED_PRIVATE_KEY';](/force-app/main/default/classes/BoxContentUploaderController.cls#L10)
-    * [String enterpriseId = 'ENTERPRISE_ID';](/force-app/main/default/classes/BoxContentUploaderController.cls#L11)
+    * [String publicKeyId = 'PUBLIC_KEY_ID';](/box-ui-elements-lcc/force-app/main/default/classes/BoxContentUploaderController.cls#L9)
+    * [String privateKey = 'DECRYPTED_PRIVATE_KEY';](/box-ui-elements-lcc/force-app/main/default/classes/BoxContentUploaderController.cls#L10)
+    * [String enterpriseId = 'ENTERPRISE_ID';](/box-ui-elements-lcc/force-app/main/default/classes/BoxContentUploaderController.cls#L11)
     * [String clientId = 'CLIENT_ID';](/force-app/main/default/classes/BoxContentUploaderController.cls#L12)
-    * [String clientSecret = 'CLIENT_SECRET';](/force-app/main/default/classes/BoxContentUploaderController.cls#L13)
+    * [String clientSecret = 'CLIENT_SECRET';](/box-ui-elements-lcc/force-app/main/default/classes/BoxContentUploaderController.cls#L13)
 5. Deploy your project source to either you scratch org or developer org in the next section.
 
 ## Deploy to your Org
@@ -44,23 +44,23 @@ sfdx force:source:deploy -p force-app -u username@company.com
 
 
 ## Project Contents
-1. [BoxContentUploader](/force-app/main/default/aura/BoxContentUploader): Lightning Aura component
-    * [BoxContentUploader.cmp](/force-app/main/default/aura/BoxContentUploader/BoxContentUploader.cmp): View / Markup that also contains the lightning:contain (ie iFrame)
-    * [BoxContentUploader-meta.xml](/force-app/main/default/aura/BoxContentUploader/BoxContentUploader.cmp-meta.xml): Metadata File
-    * [BoxContentUploader.css](/force-app/main/default/aura/BoxContentUploader/BoxContentUploader.css): Contains styles for the component.
-    * [BoxContentUploader.design](/force-app/main/default/aura/BoxContentUploader/BoxContentUploader.cmp): Containing the Display name for the component. File required for components used in Lightning App Builder, Lightning pages, Experience Builder, or Flow Builder.
-    * [BoxContentUploader-meta.svg](/force-app/main/default/aura/BoxContentUploader/BoxContentUploader.cmp): Custom icon resource for components used in the Lightning App Builder or Experience Builder.
-    * [BoxContentUploaderController.js](/force-app/main/default/aura/BoxContentUploader/BoxContentUploader.cmp): Contains client-side controller methods to handle events in the component.
-    * [BoxContentUploaderHelper.js](/force-app/main/default/aura/BoxContentUploader/BoxContentUploader.cmp): NOT USED - JavaScript functions that can be called from any JavaScript code in a component’s bundle.
-    * [BoxContentUploaderRenderer.js](/force-app/main/default/aura/BoxContentUploader/BoxContentUploader.cmp): NOT USED - Client-side renderer to override default rendering for a component.
-2. [BoxContentUploaderController](/force-app/main/default/classes/BoxContentUploaderController.cls): Apex server-side controller that creates a Box JWT Connection and contains token exchange logic.
-3. [staticresources/uploader](/force-app/main/default/staticresources/uploader): Static application source files that receive messages from the Lightning Aura component and instantiate the Content Uploader Box UI Element.
-4. [js-app](/js-app): Source code for the javascript app that is bundled as a static resource. When changing javascript source, you must rebuild using the following command:
+1. [BoxContentUploader](/box-ui-elements-lcc/force-app/main/default/aura/BoxContentUploader): Lightning Aura component
+    * [BoxContentUploader.cmp](/box-ui-elements-lcc/force-app/main/default/aura/BoxContentUploader/BoxContentUploader.cmp): View / Markup that also contains the lightning:contain (ie iFrame)
+    * [BoxContentUploader-meta.xml](/box-ui-elements-lcc/force-app/main/default/aura/BoxContentUploader/BoxContentUploader.cmp-meta.xml): Metadata File
+    * [BoxContentUploader.css](/box-ui-elements-lcc/force-app/main/default/aura/BoxContentUploader/BoxContentUploader.css): Contains styles for the component.
+    * [BoxContentUploader.design](/box-ui-elements-lcc/force-app/main/default/aura/BoxContentUploader/BoxContentUploader.cmp): Containing the Display name for the component. File required for components used in Lightning App Builder, Lightning pages, Experience Builder, or Flow Builder.
+    * [BoxContentUploader-meta.svg](/box-ui-elements-lcc/force-app/main/default/aura/BoxContentUploader/BoxContentUploader.cmp): Custom icon resource for components used in the Lightning App Builder or Experience Builder.
+    * [BoxContentUploaderController.js](/box-ui-elements-lcc/force-app/main/default/aura/BoxContentUploader/BoxContentUploader.cmp): Contains client-side controller methods to handle events in the component.
+    * [BoxContentUploaderHelper.js](/box-ui-elements-lcc/force-app/main/default/aura/BoxContentUploader/BoxContentUploader.cmp): NOT USED - JavaScript functions that can be called from any JavaScript code in a component’s bundle.
+    * [BoxContentUploaderRenderer.js](/box-ui-elements-lcc/force-app/main/default/aura/BoxContentUploader/BoxContentUploader.cmp): NOT USED - Client-side renderer to override default rendering for a component.
+2. [BoxContentUploaderController](/box-ui-elements-lcc/force-app/main/default/classes/BoxContentUploaderController.cls): Apex server-side controller that creates a Box JWT Connection and contains token exchange logic.
+3. [staticresources/uploader](/box-ui-elements-lcc/force-app/main/default/staticresources/uploader): Static application source files that receive messages from the Lightning Aura component and instantiate the Content Uploader Box UI Element.
+4. [js-app](/box-ui-elements-lcc/js-app): Source code for the javascript app that is bundled as a static resource. When changing javascript source, you must rebuild using the following command:
 ```
 yarn install (if this is your first time building)
 yarn build (or npm build)
 ```
-5. [CSP Trusted Sites](/force-app/main/default/cspTrustedSites): This essentially whitelists the pertinent Box URLs in the Salesforce CSP Trusted Sites setup page.
+5. [CSP Trusted Sites](/box-ui-elements-lcc/force-app/main/default/cspTrustedSites): This essentially whitelists the pertinent Box URLs in the Salesforce CSP Trusted Sites setup page.
     > Why manually configure [CSP Trusted Sites](https://help.salesforce.com/articleView?id=csp_trusted_sites.htm) for Box when you can automate it?
     > Note: You may all need to update Remote Site Settings found in the Setup.
 

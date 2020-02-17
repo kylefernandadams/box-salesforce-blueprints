@@ -1,11 +1,10 @@
 # box-ui-elements-lcc
 Box UI Elements Lightning example that leverages the lightning:container component and messaging system.
 
-# Corresponding Documentation
-
-    * [Lightning Container documentation](https://developer.salesforce.com/docs/component-library/bundle/lightning:container)
-    * [Box UI Elements](https://developer.box.com/en/guides/embed/ui-elements/)
-    * [Box Token Exchange](https://developer.box.com/en/guides/embed/ui-elements/access/)
+# Related Documentation
+   * [Lightning Container documentation](https://developer.salesforce.com/docs/component-library/bundle/lightning:container)
+   * [Box UI Elements](https://developer.box.com/en/guides/embed/ui-elements/)
+   * [Box Token Exchange](https://developer.box.com/en/guides/embed/ui-elements/access/)
 
 ## Pre-Requisites
 

@@ -14,7 +14,7 @@ Box UI Elements Lightning example that leverages the lightning:container compone
 ```
 python3 parse_box_config.py /path/to/12345_box_congig.json
 ```
-4. Update the [BoxContentUploaderController](/box-ui-elements-lcc//force-app/main/default/classes/BoxContentUploaderController.cls) with the values found in the newly generated sfdc_box_config.json file.
+4. Update the [BoxContentUploaderController](/box-ui-elements-lcc//force-app/main/default/classes/BoxContentUploaderController.cls) Apex class with the values found in the newly generated sfdc_box_config.json file.
     > Note: this is necessary since Salesforce will throw an exception if you try to use an encrypted private key.
 
     * [String publicKeyId = 'PUBLIC_KEY_ID';](/box-ui-elements-lcc/force-app/main/default/classes/BoxContentUploaderController.cls#L9)

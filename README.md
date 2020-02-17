@@ -8,19 +8,19 @@ The Box Salesforce Blueprints project is a collection of examples that can be us
 
 1. Clone this github repo.
 2. Setup your Salesforce DX environment: https://developer.salesforce.com/docs/component-library/documentation/lwc/lwc.install_setup_develop
-3. Install and Configure the Box for Salesforce Managed Package: https://community.box.com/t5/How-to-Guides-for-Integrations/Installing-and-Configuring-Box-For-Salesforce/ta-p/180
-    > Note: Dont forget to add the Box VisualForce components to each of the record type layouts.
-
-4. Install the Box Salesforce SDK Unmanaged Package:
+3. Install the Box Salesforce SDK Unmanaged Package:
 
     * Production/Developer Org: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t4P000000i6J9
     * Sandbox Org: https://test.salesforce.com/packaging/installPackage.apexp?p0=04t4P000000i6J9
 
+4. Create a JWT Application in the [Box Developer Console](https://account.box.com/developers/services) using the following [Setup Guide.](https://developer.box.com/en/guides/applications/custom-apps/jwt-setup/)
 5. Open the source from this repo in VS Code.
 6. In VS Code, use the cmd+shift+p shortcut and select SFDX: Authorize Org.
 7. Change directory to one of the example projects.
 8. Modify the source as necessary.
 9. Deploy to either your scratch org or developer org.
+* OPTIONAL: Install and Configure the Box for Salesforce Managed Package: https://community.box.com/t5/How-to-Guides-for-Integrations/Installing-and-Configuring-Box-For-Salesforce/ta-p/180
+    > Note: Dont forget to add the Box VisualForce components to each of the record type layouts.
 
 ## Disclaimer
 This project is a collection of open source examples and should not be treated as an officially supported product. Use at your own risk. If you encounter any problems, please log an [issue](https://github.com/kylefernandadams/box-salesforce-blueprints/issues).

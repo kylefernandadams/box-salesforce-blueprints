@@ -8,13 +8,14 @@ Box UI Elements Lightning example that leverages the lightning:container compone
 
 ## Pre-Requisites
 
-1. Open the source from this repo in VS Code.
-2. In VS Code, use the cmd+shift+p shortcut and select SFDX: Authorize Org
-3. Decrypt your Box JWT Private Key using the [parse_box_config.py](/box-ui-elements-lcc/scripts/parse_box_config.py) script. The script will decrypt your Box-generated application config file and create a new sfdc_box_config.json file at the root of the sfdx project.
+1. Ensure you've completed pre-requisites in the [parent project documentation](../README.md)
+2. Open the source from this repo in VS Code.
+3. In VS Code, use the cmd+shift+p shortcut and select SFDX: Authorize Org
+4. Decrypt your Box JWT Private Key using the [parse_box_config.py](/box-ui-elements-lcc/scripts/parse_box_config.py) script. The script will decrypt your Box-generated application config file and create a new sfdc_box_config.json file at the root of the sfdx project.
 ```
 python3 ./scripts/parse_box_config.py /path/to/12345_box_congig.json
 ```
-4. Update the [BoxContentUploaderController](/box-ui-elements-lcc//force-app/main/default/classes/BoxContentUploaderController.cls) Apex class with the values found in the newly generated sfdc_box_config.json file.
+5. Update the [BoxContentUploaderController](/box-ui-elements-lcc//force-app/main/default/classes/BoxContentUploaderController.cls) Apex class with the values found in the newly generated sfdc_box_config.json file.
     > Note: this is necessary since Salesforce will throw an exception if you try to use an encrypted private key.
 
     * [String publicKeyId = 'PUBLIC_KEY_ID';](/box-ui-elements-lcc/force-app/main/default/classes/BoxContentUploaderController.cls#L9)
@@ -22,7 +23,7 @@ python3 ./scripts/parse_box_config.py /path/to/12345_box_congig.json
     * [String enterpriseId = 'ENTERPRISE_ID';](/box-ui-elements-lcc/force-app/main/default/classes/BoxContentUploaderController.cls#L11)
     * [String clientId = 'CLIENT_ID';](/force-app/main/default/classes/BoxContentUploaderController.cls#L12)
     * [String clientSecret = 'CLIENT_SECRET';](/box-ui-elements-lcc/force-app/main/default/classes/BoxContentUploaderController.cls#L13)
-5. Deploy your project source to either you scratch org or developer org in the next section.
+6. Deploy your project source to either you scratch org or developer org in the next section.
 
 ## Deploy to your Org
 Push to Scratch Org:

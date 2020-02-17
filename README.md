@@ -17,8 +17,7 @@ The Box Salesforce Blueprints project is a collection of examples that can be us
 5. Open the source from this repo in VS Code.
 6. In VS Code, use the cmd+shift+p shortcut and select SFDX: Authorize Org.
 7. Change directory to one of the example projects.
-8. Modify the source as necessary.
-9. Deploy to either your scratch org or developer org.
+8. Refer to the documentation in each of the example projects.
 * OPTIONAL: Install and Configure the Box for Salesforce Managed Package: https://community.box.com/t5/How-to-Guides-for-Integrations/Installing-and-Configuring-Box-For-Salesforce/ta-p/180
     > Note: Dont forget to add the Box VisualForce components to each of the record type layouts.
 

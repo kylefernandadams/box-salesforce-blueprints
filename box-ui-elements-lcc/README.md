@@ -12,7 +12,7 @@ Box UI Elements Lightning example that leverages the lightning:container compone
 2. In VS Code, use the cmd+shift+p shortcut and select SFDX: Authorize Org
 3. Decrypt your Box JWT Private Key using the [parse_box_config.py](/box-ui-elements-lcc/scripts/parse_box_config.py) script. The script will decrypt your Box-generated application config file and create a new sfdc_box_config.json file at the root of the sfdx project.
 ```
-python3 parse_box_config.py /path/to/12345_box_congig.json
+python3 ./scripts/parse_box_config.py /path/to/12345_box_congig.json
 ```
 4. Update the [BoxContentUploaderController](/box-ui-elements-lcc//force-app/main/default/classes/BoxContentUploaderController.cls) Apex class with the values found in the newly generated sfdc_box_config.json file.
     > Note: this is necessary since Salesforce will throw an exception if you try to use an encrypted private key.
@@ -66,7 +66,7 @@ yarn build (or npm build)
 
 
 ## Disclaimer
-This project is a collection open source examples and should not be treated as an officially supported product. Use at your own risk. If you encounter any problems, please log an [issue](https://github.com/kylefernandadams/box-salesforce-blueprints/issues).
+This project is a collection of open source examples and should not be treated as an officially supported product. Use at your own risk. If you encounter any problems, please log an [issue](https://github.com/kylefernandadams/box-salesforce-blueprints/issues).
 
 ## License
 

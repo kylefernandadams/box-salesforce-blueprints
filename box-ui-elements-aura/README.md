@@ -11,20 +11,20 @@ Box UI Elements Lightning example that leverages Salesforce Lightning Aura compo
 1. Ensure you've completed pre-requisites in the [parent project documentation](../README.md)
 2. Open the source from this repo in VS Code.
 3. In VS Code, use the cmd+shift+p shortcut and select SFDX: Authorize Org
-4. Decrypt your Box JWT Private Key using the [parse_box_config.py](/scripts/parse_box_config.py) script. The script will decrypt your Box-generated application config file and create a new sfdc_box_config.json file at the root of the sfdx project.
-   
+4. Decrypt your Box JWT Private Key using the [parse_box_config.py](/box-ui-elements-aura/scripts/parse_box_config.py) script. The script will decrypt your Box-generated application config file and create a new sfdc_box_config.json file at the root of the sfdx project.
+
     > Note: this is necessary since Salesforce will throw an exception if you try to use an encrypted private key.
 
 ```
 python3 ./scripts/parse_box_config.py /path/to/12345_box_congig.json
 ```
-5. Update the [BoxConnection](/force-app/main/default/classes/BoxConnection.cls) Apex class with the values found in the newly generated sfdc_box_config.json file.
+5. Update the [BoxConnection](/box-ui-elements-aura/force-app/main/default/classes/BoxConnection.cls) Apex class with the values found in the newly generated sfdc_box_config.json file.
 
-    * [String publicKeyId = 'PUBLIC_KEY_ID';](/force-app/main/default/classes/BoxConnection.cls#L11)
-    * [String privateKey = 'DECRYPTED_PRIVATE_KEY';](/force-app/main/default/classes/BoxConnection.cls#L12)
-    * [String enterpriseId = 'ENTERPRISE_ID';](/force-app/main/default/classes/BoxConnection.cls#L13)
-    * [String clientId = 'CLIENT_ID';](/force-app/main/default/classes/BoxConnection.cls#L14)
-    * [String clientSecret = 'CLIENT_SECRET';](/force-app/main/default/classes/BoxConnection.cls#L14)
+    * [String publicKeyId = 'PUBLIC_KEY_ID';](/box-ui-elements-aura/force-app/main/default/classes/BoxConnection.cls#L11)
+    * [String privateKey = 'DECRYPTED_PRIVATE_KEY';](/box-ui-elements-aura/force-app/main/default/classes/BoxConnection.cls#L12)
+    * [String enterpriseId = 'ENTERPRISE_ID';](/box-ui-elements-aura/force-app/main/default/classes/BoxConnection.cls#L13)
+    * [String clientId = 'CLIENT_ID';](/box-ui-elements-aura/force-app/main/default/classes/BoxConnection.cls#L14)
+    * [String clientSecret = 'CLIENT_SECRET';](/box-ui-elements-aura/force-app/main/default/classes/BoxConnection.cls#L14)
 6. Deploy your project source to either you scratch org or developer org in the next section.
 
 ## Deploy to your Org
@@ -47,19 +47,19 @@ sfdx force:source:deploy -p force-app -u username@company.com
 
 
 ## Project Contents
-1. [ContentExplorer](/force-app/main/default/aura/ContentExplorer): Lightning Aura component
-    * [ContentExplorer.cmp](/force-app/main/default/aura/ContentExplorer/ContentExplorer.cmp): View / Markup that also contains the lightning:contain (ie iFrame)
-    * [ContentExplorer-meta.xml](/force-app/main/default/aura/ContentExplorer/ContentExplorer.cmp-meta.xml): Metadata File
-    * [ContentExplorer.css](/force-app/main/default/aura/ContentExplorer/ContentExplorer.css): Contains styles for the component.
-    * [ContentExplorer.design](/force-app/main/default/aura/ContentExplorer/ContentExplorer.design): Containing the Display name for the component. File required for components used in Lightning App Builder, Lightning pages, Experience Builder, or Flow Builder.
-    * [ContentExplorer-meta.svg](/force-app/main/default/aura/ContentExplorer/ContentExplorer.svg): Custom icon resource for components used in the Lightning App Builder or Experience Builder.
-    * [ContentExplorerController.js](/force-app/main/default/aura/ContentExplorer/ContentExplorerController.js): Contains client-side controller methods to handle events in the component.
-    * [ContentExplorerHelper.js](/force-app/main/default/aura/ContentExplorer/ContentExplorerHelper.js): NOT USED - JavaScript functions that can be called from any JavaScript code in a component’s bundle.
-    * [ContentExplorerRenderer.js](/force-app/main/default/aura/ContentExplorer/ContentExplorerRenderer.js): NOT USED - Client-side renderer to override default rendering for a component.
-2. [ContentExplorerController](/force-app/main/default/classes/ContentExplorerController.cls): Apex server-side controller that creates a Box JWT Connection and contains token exchange logic.
-3. [staticresources/explorer](/force-app/main/default/staticresources/explorer): Static application source files for the Content Explorer Box UI Element.
-4. [staticresources/preview](/force-app/main/default/staticresources/preview): Static application source files for the Content Preview Box UI Element.
-6. [CSP Trusted Sites](/force-app/main/default/cspTrustedSites): This essentially whitelists the pertinent Box URLs in the Salesforce CSP Trusted Sites setup page.
+1. [ContentExplorer](/box-ui-elements-aura/force-app/main/default/aura/ContentExplorer): Lightning Aura component
+    * [ContentExplorer.cmp](/box-ui-elements-aura/force-app/main/default/aura/ContentExplorer/ContentExplorer.cmp): View / Markup that also contains the lightning:contain (ie iFrame)
+    * [ContentExplorer-meta.xml](/box-ui-elements-aura/force-app/main/default/aura/ContentExplorer/ContentExplorer.cmp-meta.xml): Metadata File
+    * [ContentExplorer.css](/box-ui-elements-aura/force-app/main/default/aura/ContentExplorer/ContentExplorer.css): Contains styles for the component.
+    * [ContentExplorer.design](/box-ui-elements-aura/force-app/main/default/aura/ContentExplorer/ContentExplorer.design): Containing the Display name for the component. File required for components used in Lightning App Builder, Lightning pages, Experience Builder, or Flow Builder.
+    * [ContentExplorer-meta.svg](/box-ui-elements-aura/force-app/main/default/aura/ContentExplorer/ContentExplorer.svg): Custom icon resource for components used in the Lightning App Builder or Experience Builder.
+    * [ContentExplorerController.js](/box-ui-elements-aura/force-app/main/default/aura/ContentExplorer/ContentExplorerController.js): Contains client-side controller methods to handle events in the component.
+    * [ContentExplorerHelper.js](/box-ui-elements-aura/force-app/main/default/aura/ContentExplorer/ContentExplorerHelper.js): NOT USED - JavaScript functions that can be called from any JavaScript code in a component’s bundle.
+    * [ContentExplorerRenderer.js](/box-ui-elements-aura/force-app/main/default/aura/ContentExplorer/ContentExplorerRenderer.js): NOT USED - Client-side renderer to override default rendering for a component.
+2. [ContentExplorerController](/box-ui-elements-aura/force-app/main/default/classes/ContentExplorerController.cls): Apex server-side controller that creates a Box JWT Connection and contains token exchange logic.
+3. [staticresources/explorer](/box-ui-elements-aura/force-app/main/default/staticresources/explorer): Static application source files for the Content Explorer Box UI Element.
+4. [staticresources/preview](/box-ui-elements-aura/force-app/main/default/staticresources/preview): Static application source files for the Content Preview Box UI Element.
+6. [CSP Trusted Sites](/box-ui-elements-aura/force-app/main/default/cspTrustedSites): This essentially whitelists the pertinent Box URLs in the Salesforce CSP Trusted Sites setup page.
     > Why manually configure [CSP Trusted Sites](https://help.salesforce.com/articleView?id=csp_trusted_sites.htm) for Box when you can automate it?
     > Note: You may all need to update Remote Site Settings found in the Setup.
 

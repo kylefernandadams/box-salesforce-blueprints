@@ -2,7 +2,9 @@
 The Box Salesforce Blueprints project is a collection of examples that can be use independently of the Box for Salesforce managed package or in conjunction. These examples are designed to be used for demonstration, development, and test purposes.
 
 ## Examples
-1. [box-ui-elements-lcc](/box-ui-elements-lcc): Box UI Elements Lightning example that leverages the lightning:container component and messaging system.
+1. [box-ui-elements-aura](/box-ui-elements-aura): Box UI Elements Lightning example that leverages Salesforce Lightning Aura components.
+2. [box-ui-elements-lcc](/box-ui-elements-lcc): Box UI Elements Lightning example that leverages the lightning:container component and messaging system.
+
 
 ## Pre-Requisites
 

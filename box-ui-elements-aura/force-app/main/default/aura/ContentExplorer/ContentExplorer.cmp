@@ -1,0 +1,16 @@
+<aura:component controller="ContentExplorerController" implements="force:hasSObjectName,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes">
+    <aura:attribute name="logoUrl" type="string" default="{!$Resource.logos + '/FRBNY_logo.png'}" />
+    <ltng:require 
+        scripts="{!join(',',
+                                $Resource.explorer + '/11.0.2/en-US/explorer.js',
+                                $Resource.preview + '/2.42.0/en-US/preview.js',
+                                $Resource.polyfills + '/core-js/2.5.3/core.min.js'
+                        )}"         
+        styles="{!join(',',
+                                $Resource.explorer + '/11.0.2/en-US/explorer.css',
+                                $Resource.preview + '/2.42.0/en-US/preview.css'
+                        )}"
+        
+        afterScriptsLoaded="{!c.doInit}"/>
+    <div aura:id="explorer-container" style="height: 500px"> </div>
+</aura:component>	

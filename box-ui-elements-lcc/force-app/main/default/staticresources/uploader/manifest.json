@@ -1,8 +1,0 @@
-{
-  "landing-pages": [
-    { 
-      "path": "index.html", 
-      "apex-controller": "BoxContentUploaderController" 
-    }
-  ]
-}

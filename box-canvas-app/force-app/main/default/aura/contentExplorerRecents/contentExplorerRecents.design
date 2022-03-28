@@ -1,0 +1,3 @@
+<design:component label="Content Explorer - Recents">
+    <design:attribute name="userId" label="Box User ID" description="Enter the Box user ID to render in the UI Element" required="true"/>
+</design:component>

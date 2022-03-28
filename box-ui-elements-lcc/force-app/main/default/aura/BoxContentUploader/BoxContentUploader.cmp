@@ -1,7 +1,0 @@
-<aura:component controller="BoxContentUploaderController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
-    <lightning:card title="Box Content Uploader" >
-        <lightning:container aura:id="uploaderApp" src="{!$Resource.uploader + '/index.html'}"
-        onmessage="{!c.handleMessage}" 
-        onerror="{!c.handleError}" />
-    </lightning:card>
-</aura:component>	

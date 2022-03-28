@@ -106,3 +106,6 @@ dist
 # VS Code project settings
 .vscode/
 .sfdx/
+
+box-ui-elements-heroku/box_config*.json
+box-ui-elements-heroku/node_modules/

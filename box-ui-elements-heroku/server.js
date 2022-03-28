@@ -16,20 +16,14 @@ const { EXPLORER_SCOPES, RECENTS_SCOPES, PICKER_SCOPES, UPLOADER_SCOPES, PREVIEW
 
 const decode = require("salesforce-signed-request");
 const signedRequestConsumerSecret = process.env.SIGNED_REQUEST_CONSUMER_SECRET;
-// const signedRequestConsumerSecret = '03CC38CE0B237B16C786452B47E2AE570347BB9347E975240BA774C002F63F51';
-
-
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors({
   origin: [
-      'https://fierce-eyrie-95834.herokuapp.com', 
-      'https://kadams-demo-dev-ed.my.salesforce.com', 
-      'http://localhost:8080', 
-      'https://fanthony-1-17e7497524a-developer-edition.na213.force.com', 
-        'https://awesome-einstein-309456-dev-ed.lightning.force.com',
-        'https://awesome-einstein-309456-dev-ed.my.salesforce.com'
+      'https://<my_heroku_app_name>.herokuapp.com', 
+      'https://<my_salesforce_org>.my.salesforce.com', 
+      'http://localhost:8080'
     ]
 }));
 app.use(favicon(__dirname + '/build/favicon.ico'));

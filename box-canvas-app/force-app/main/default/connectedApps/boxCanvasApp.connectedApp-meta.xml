@@ -2,17 +2,15 @@
 <ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
     <canvasConfig>
         <accessMethod>Post</accessMethod>
-        <canvasUrl>https://fierce-eyrie-95834.herokuapp.com/signedrequest</canvasUrl>
-        <!-- <canvasUrl>http://localhost:8080/signedrequest</canvasUrl> -->
+        <canvasUrl>http://localhost:8080/signedrequest</canvasUrl>
         <lifecycleClass>CanvasAppLifecycleHandler</lifecycleClass>
         <locations>Aura</locations>
         <samlInitiationMethod>None</samlInitiationMethod>
     </canvasConfig>
-    <contactEmail>kyle.adams@massnerder.io</contactEmail>
+    <contactEmail>me@email.com</contactEmail>
     <label>Box CanvasApp</label>
     <oauthConfig>
-        <!-- <callbackUrl>http://localhost:8080/callback</callbackUrl> -->
-        <callbackUrl>https://fierce-eyrie-95834.herokuapp.com/callback</callbackUrl>
+        <callbackUrl>http://localhost:8080/callback</callbackUrl>
         <isAdminApproved>true</isAdminApproved>
         <isConsumerSecretOptional>false</isConsumerSecretOptional>
         <isIntrospectAllTokens>false</isIntrospectAllTokens>

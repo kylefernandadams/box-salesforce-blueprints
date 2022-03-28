@@ -2,11 +2,6 @@
 The Box UI Elements Heroku Template project is an example that uses a React.js frontend and Express backend that handles signed request logic from a Salesforce CanvasApp. These examples are designed to be used for demonstration, development, and test purposes.
 
 
-## Heroku Deployment
-To deploy this project to Heroku, be sure to set your environment variables in the dashboard:
-
-
-
 ## Pre-Requisites
 
 1. Create a JWT Application in the [Box Developer Console](https://account.box.com/developers/services) using the following [Setup Guide.](https://developer.box.com/en/guides/applications/custom-apps/jwt-setup/)

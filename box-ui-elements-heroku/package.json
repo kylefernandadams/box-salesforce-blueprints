@@ -1,5 +1,5 @@
 {
-  "name": "react-canvas-app",
+  "name": "box-ui-elements-heroku-template",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,7 +9,6 @@
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "express-favicon": "^2.0.1",
-    "jsforce": "^1.11.0",
     "node-sass": "^7.0.1",
     "path": "^0.12.7",
     "react": "^17.0.2",

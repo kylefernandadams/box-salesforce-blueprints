@@ -9,7 +9,7 @@ const app = express();
 
 const BoxSDK = require('box-node-sdk');
 const boxConfig = process.env.BOX_CONFIG;
-const sdk = BoxSDK.getPreconfiguredInstance(boxConfig);
+const sdk = BoxSDK.getPreconfiguredInstance(JSON.parse(boxConfig));
 const client = sdk.getAppAuthClient('enterprise');
 
 const { EXPLORER_SCOPES, RECENTS_SCOPES, PICKER_SCOPES, UPLOADER_SCOPES, PREVIEW_SCOPES } = require('./server-constants');
@@ -21,8 +21,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors({
   origin: [
-      'https://<my_heroku_app_name>.herokuapp.com', 
-      'https://<my_salesforce_org>.my.salesforce.com', 
+      `https://${process.env.APP_NAME}.herokuapp.com`, 
+      `https://${process.env.SALESFORCE_DOMAIN}.my.salesforce.com`, 
       'http://localhost:8080'
     ]
 }));
@@ -84,12 +84,9 @@ app.post("/signedrequest", async (req, res) => {
 
 app.get('/box/explorer/token-downscope/:folderId', async (req, res) => {
     try {
-        const folderId = req.params.folderId;
-        console.log('Found folder: ', folderId);
-     
-        const folderResource =  `https://api.box.com/2.0/folders/${folderId}`;
-        const downscopedToken = await client.exchangeToken(EXPLORER_SCOPES, folderResource);
-        console.log('Generated token: ', downscopedToken);
+        const folderId = req.params.folderId;     
+        const downscopedToken = await client.exchangeToken(EXPLORER_SCOPES, `https://api.box.com/2.0/folders/${folderId}`);
+
         res.setHeader('Content-Type', 'application/json');
         res.status(200).send(downscopedToken);
     }
@@ -103,10 +100,8 @@ app.get('/box/explorer-recents/token-downscope/:userId', async (req, res) => {
     try {
         const userId = req.params.userId;
         const userClient = sdk.getAppAuthClient('user', userId);
-        const currentUser = await userClient.users.get(userClient.CURRENT_USER_ID);
-        console.log('Found current users: ', currentUser.name);
         const downscopedToken = await userClient.exchangeToken(RECENTS_SCOPES)
-        console.log('Generated token: ', downscopedToken);
+
         res.setHeader('Content-Type', 'application/json');
         res.status(200).send(downscopedToken);
     }
@@ -120,7 +115,7 @@ app.get('/box/picker/token-downscope/:folderId', async (req, res) => {
     try {
         const folderId = req.params.folderId;
         const downscopedToken = await client.exchangeToken(PICKER_SCOPES, `https://api.box.com/2.0/folders/${folderId}`);
-        console.log('Generated token: ', downscopedToken);
+
         res.setHeader('Content-Type', 'application/json');
         res.status(200).send(downscopedToken);
     }
@@ -134,7 +129,7 @@ app.get('/box/uploader/token-downscope/:folderId', async (req, res) => {
     try {
         const folderId = req.params.folderId;
         const downscopedToken = await client.exchangeToken(UPLOADER_SCOPES, `https://api.box.com/2.0/folders/${folderId}`);
-        console.log('Generated token: ', downscopedToken);
+
         res.setHeader('Content-Type', 'application/json');
         res.status(200).send(downscopedToken);
     }
@@ -148,7 +143,7 @@ app.get('/box/preview/token-downscope/:fileId', async (req, res) => {
     try {
         const fileId = req.params.fileId;
         const downscopedToken = await client.exchangeToken(PREVIEW_SCOPES, `https://api.box.com/2.0/files/${fileId}`);
-        console.log('Generated token: ', downscopedToken);
+
         res.setHeader('Content-Type', 'application/json');
         res.status(200).send(downscopedToken);
     }

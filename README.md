@@ -3,6 +3,8 @@ The Box Salesforce Blueprints project is a collection of examples that can be us
 
 ## Examples
 1. [box-ui-elements-heroku](/box-ui-elements-aura): Box UI Elements React example using an Express backend. In addition, it contains logic to handle Signed Requests from a Salesforce Canvas App.
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kylefernandadams/box-ui-elements-heroku-template)
+
 2. [box-canvas-app](/box-canvas-app): Salesforce lightning aura components to display the Box UI Elements react app, Salesforce Canvas app configuration, and Canvas App lifecycle handler. 
 
 
@@ -26,7 +28,7 @@ This project is a collection of open source examples and should not be treated a
 
 The MIT License (MIT)
 
-Copyright (c) 2020 Kyle Adams
+Copyright (c) 2022 Kyle Adams
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

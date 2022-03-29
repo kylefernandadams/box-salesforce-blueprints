@@ -1,3 +1,0 @@
-<design:component label="Content Uploader">
-    <design:attribute name="folderId" label="Box Folder ID" description="Enter the Box folder ID to render in the UI Element" default="0" />
-</design:component>

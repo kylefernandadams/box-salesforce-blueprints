@@ -1,3 +1,0 @@
-<design:component label="Content Preview">
-    <design:attribute name="fileId" label="Box File ID" description="Enter the Box file ID to render in the UI Element" />
-</design:component>

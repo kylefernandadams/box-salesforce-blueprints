@@ -2,7 +2,7 @@
 The Box Salesforce Blueprints project is a collection of examples that can be use independently of the Box for Salesforce managed package or in conjunction. These examples are designed to be used for demonstration, development, and test purposes.
 
 ## Examples
-1. [box-canvas-app](/box-canvas-app): Salesforce lightning aura components to render external Box UI Elements, Salesforce Canvas app configuration, and Canvas App lifecycle handler. 
+1. [box-canvas-app](https://github.com/kylefernandadams/box-canvas-app): Salesforce lightning aura components to render external Box UI Elements, Salesforce Canvas app configuration, and Canvas App lifecycle handler. 
 
 
 ## Pre-Requisites
